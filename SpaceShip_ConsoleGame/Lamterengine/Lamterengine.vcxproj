@@ -162,6 +162,7 @@
     <ClInclude Include="Source\LamterEngine\Structures\GameObject.h" />
     <ClInclude Include="Source\LamterEngine\Structures\Object.h" />
     <ClInclude Include="Source\LamterEngine\Timers\Timer.h" />
+    <ClInclude Include="Source\LamterEngine\XMLParser\XMLParser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\LamterEngine\Classes\COORD.cpp" />
@@ -171,6 +172,7 @@
     <ClCompile Include="Source\LamterEngine\Engine\Time.cpp" />
     <ClCompile Include="Source\LamterEngine\Input\InputManager.cpp" />
     <ClCompile Include="Source\LamterEngine\Timers\Timer.cpp" />
+    <ClCompile Include="Source\LamterEngine\XMLParser\XMLParser.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
