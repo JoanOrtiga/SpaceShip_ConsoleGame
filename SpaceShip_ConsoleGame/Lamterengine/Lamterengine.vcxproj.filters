@@ -36,7 +36,7 @@
     <ClInclude Include="Source\LamterEngine\Input\KeyCode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\LamterEngine\Structures\IGame.h">
+    <ClInclude Include="Source\LamterEngine\Structures\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\LamterEngine\Structures\GameObject.h">
@@ -93,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\ThirdParty\xmltest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LamterEngine\Structures\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

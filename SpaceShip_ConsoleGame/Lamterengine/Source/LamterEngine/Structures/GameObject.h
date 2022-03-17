@@ -15,6 +15,7 @@ namespace Lamter
 
 	public:
 		virtual ~GameObject() = default;
+		virtual void Awake() = 0;
 		virtual void Update(double dt) = 0;
 		virtual void DrawnUpdate() = 0;
 		virtual void Draw() = 0;

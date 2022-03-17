@@ -158,7 +158,7 @@
     <ClInclude Include="Source\LamterEngine\Input\InputManager.h" />
     <ClInclude Include="Source\LamterEngine\Input\KeyCode.h" />
     <ClInclude Include="Source\LamterEngine\Structures\Collider.h" />
-    <ClInclude Include="Source\LamterEngine\Structures\IGame.h" />
+    <ClInclude Include="Source\LamterEngine\Structures\Game.h" />
     <ClInclude Include="Source\LamterEngine\Structures\GameObject.h" />
     <ClInclude Include="Source\LamterEngine\Structures\Object.h" />
     <ClInclude Include="Source\LamterEngine\Timers\Timer.h" />
@@ -172,6 +172,7 @@
     <ClCompile Include="Source\LamterEngine\Engine\Random.cpp" />
     <ClCompile Include="Source\LamterEngine\Engine\Time.cpp" />
     <ClCompile Include="Source\LamterEngine\Input\InputManager.cpp" />
+    <ClCompile Include="Source\LamterEngine\Structures\Game.cpp" />
     <ClCompile Include="Source\LamterEngine\Timers\Timer.cpp" />
     <ClCompile Include="Source\LamterEngine\XMLParser\XMLParser.cpp" />
     <ClCompile Include="Source\ThirdParty\tinyxml2.cpp" />

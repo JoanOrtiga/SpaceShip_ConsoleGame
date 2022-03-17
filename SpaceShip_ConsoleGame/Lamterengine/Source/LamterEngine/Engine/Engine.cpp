@@ -7,7 +7,7 @@
 
 namespace Lamter
 {
-	Engine::Engine(IMenu* _menu, IGame* _game, int targetFPS, COORD consoleBufferSize, bool showCursor) : gameTime(new Time(targetFPS))
+	Engine::Engine(IMenu* _menu, Game* _game, int targetFPS, COORD consoleBufferSize, bool showCursor) : gameTime(new Time(targetFPS))
 	{
 		ConsoleController::Init(consoleBufferSize, showCursor);
 		InputManager::Init();

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Time.h"
-#include "../Structures/IGame.h"
+#include "../Structures/Game.h"
 #include "../Classes/COORD.h"
 #include "../Structures/IMenu.h"
 
@@ -11,12 +11,12 @@ namespace Lamter
 	{
 	private:
 		Time* gameTime;
-		IGame* game;
+		Game* game;
 		IMenu* menu;
 		bool exitGame = false;
 
 	public:
-		Engine(IMenu* _menu, IGame* _game, int targetFPS, COORD consoleBufferSize, bool showCursor);
+		Engine(IMenu* _menu, Game* _game, int targetFPS, COORD consoleBufferSize, bool showCursor);
 		~Engine();
 		void Run();
 	};
