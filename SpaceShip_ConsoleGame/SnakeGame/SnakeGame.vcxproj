@@ -164,11 +164,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Player\Player.cpp" />
     <ClCompile Include="src\GameSettings.cpp" />
     <ClCompile Include="src\Score\Score.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Player\Player.h" />
     <ClInclude Include="src\GameSettings.h" />
     <ClInclude Include="src\Score\Score.h" />
   </ItemGroup>

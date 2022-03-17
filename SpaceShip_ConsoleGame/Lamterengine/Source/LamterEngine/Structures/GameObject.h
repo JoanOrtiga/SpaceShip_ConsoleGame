@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "Object.h"
 #include "../Classes/COORD.h"
 
@@ -9,6 +11,7 @@ namespace Lamter
 	{
 	public:
 		Lamter::COORD position = { 0,0 };
+		std::string tag = "";
 
 	public:
 		virtual ~GameObject() = default;

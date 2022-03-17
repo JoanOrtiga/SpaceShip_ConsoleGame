@@ -12,7 +12,6 @@ public:
 		int x = 5;
 		tinyxml2::XMLDocument doc;
 		doc.LoadFile(fileLocation.c_str());
-		doc.Parse()
 	}
 };
 
