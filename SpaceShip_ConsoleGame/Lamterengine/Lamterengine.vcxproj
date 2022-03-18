@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\LamterEngine\Structures\Game.fwd.h" />
     <ClInclude Include="Source\LamterEngine\Structures\IMenu.h" />
     <ClInclude Include="Source\LamterEngine\Classes\COORD.h" />
     <ClInclude Include="Source\LamterEngine\Console\Color.h" />

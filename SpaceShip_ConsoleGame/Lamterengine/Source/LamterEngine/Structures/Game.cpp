@@ -2,10 +2,10 @@
 
 namespace Lamter
 {
-	Game::~Game()
+	/*Game::~Game()
 	{
 		delete gameObjects;
-	}
+	}*/
 
 	void Game::Init()
 	{
@@ -16,6 +16,10 @@ namespace Lamter
 	{
 		gameObjects->push_back(*_gameObject);
 		_gameObject->Awake();
+	}
+
+	void Game::NewGame()
+	{
 	}
 
 	void Game::DestroyGameObject(GameObject* _gameObject)

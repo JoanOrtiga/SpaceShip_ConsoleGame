@@ -7,18 +7,18 @@
 
 namespace Lamter
 {
-	class GameObject : Object
+	class GameObject
 	{
 	public:
 		Lamter::COORD position = { 0,0 };
-		std::string tag = "";
+		std::string tag;
 
 	public:
 		virtual ~GameObject() = default;
-		virtual void Awake() = 0;
-		virtual void Update(double dt) = 0;
-		virtual void DrawnUpdate() = 0;
-		virtual void Draw() = 0;
+		virtual void Awake();
+		virtual void Update(double dt);
+		virtual void DrawnUpdate();
+		virtual void Draw();
 	};
 }
 

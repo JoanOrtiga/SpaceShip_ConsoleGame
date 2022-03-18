@@ -15,14 +15,3 @@ public:
 	}
 };
 
-class data
-{
-	int x;
-	int y;
-};
-
-void x()
-{
-	data t;
-	XMLParser::SaveObject(t, "");
-}

@@ -12,15 +12,16 @@ namespace Lamter
 		std::vector<Lamter::GameObject>* gameObjects;
 
 	public:
-		virtual ~Game();
+		virtual ~Game() = default;
+		
+		virtual void Init();
+		void AddGameObject(GameObject* _gameObject);
+		virtual void NewGame();
+		virtual void DestroyGameObject(GameObject* gameObject);
 		/**
 		 * \brief controls game loop
 		 * \return true if game is finished, false  otherwise
 		 */
-		virtual void Init();
-		void AddGameObject(GameObject* _gameObject);
-		virtual void NewGame() = 0;
-		virtual void DestroyGameObject(GameObject* gameObject);
 		virtual bool ExitLoop();
 		virtual void Update(double dt);
 		virtual void DrawnUpdate();

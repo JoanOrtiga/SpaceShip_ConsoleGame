@@ -1,7 +1,7 @@
 #pragma once
 
 #include "LamterEngine/Structures/GameObject.h"
-
+/*
 class Player : public Lamter::GameObject
 {
 public:
@@ -19,3 +19,4 @@ public:
 private:
 };
 
+*/

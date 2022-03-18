@@ -1,8 +1,5 @@
 #pragma once
 
-#include <vector>
-
-#include "LamterEngine/Structures/GameObject.h"
 #include "LamterEngine/Structures/Game.h"
 
 class SpaceshipGame : public Lamter::Game
@@ -18,5 +15,6 @@ public:
 	void Update(double dt) override;
 	void DrawnUpdate() override;
 	void Draw() override;
+	void DestroyGameObject(Lamter::GameObject* gameObject) override;
 };
 
