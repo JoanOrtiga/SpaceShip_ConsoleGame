@@ -2,7 +2,7 @@
 
 namespace Lamter
 {
-	Timer::Timer(float _maxTime, bool updateOnDraw, bool activateOnStart = true, float startTime = -1)
+	Timer::Timer(float _maxTime, bool initReady, bool _updateOnDraw, bool activateOnStart = true, float startTime = -1)
 	{
 		if (startTime < 0)
 			time = _maxTime;
@@ -11,7 +11,8 @@ namespace Lamter
 
 		maxTime = _maxTime;
 		active = activateOnStart;
-		ready = false;
+		ready = initReady;
+		updateOnDraw = _updateOnDraw;
 	}
 
 	void Timer::Tick(float dt)
@@ -29,17 +30,29 @@ namespace Lamter
 
 	bool Timer::IsReady()
 	{
-		if(ready)
+		if(updateOnDraw)
 		{
-			time = maxTime;
-			ready = false;
-			return true;
+			if (ready)
+			{
+				time = maxTime;
+				if (updateOnDraw)
+				{
+					ready = false;
+				}
+				return true;
+			}
+			return false;
 		}
 
-		return false;
+		return ready;
 	}
 
-	float Timer::GetCurrentTime()
+	void Timer::Consume()
+	{
+		ready = false;
+	}
+
+	float Timer::GetActualTime()
 	{
 		return time;
 	}

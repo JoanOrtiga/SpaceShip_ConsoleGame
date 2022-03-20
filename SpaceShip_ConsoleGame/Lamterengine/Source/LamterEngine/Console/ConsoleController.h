@@ -30,6 +30,8 @@ namespace Lamter
 		static void Draw(std::string text);
 		static void DrawAt(char character, int x, int y);
 		static void DrawAt(std::string text, int x, int y);
+		static void DeleteAt(int x, int y);
+		static void DeleteAt(COORD position);
 		static void Fill(char character, int fillAmount);
 
 		static void SetCursorPosition(int x, int y);

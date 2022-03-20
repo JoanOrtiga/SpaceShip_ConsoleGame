@@ -30,26 +30,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -164,17 +164,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\SpaceshipGame.cpp" />
-    <ClCompile Include="src\Player\Player.cpp" />
-    <ClCompile Include="src\GameSettings.cpp" />
-    <ClCompile Include="src\Score\Score.cpp" />
+    <ClCompile Include="src\GameElements\Player\Bullet.cpp" />
+    <ClCompile Include="src\Game\SpaceshipMenu.cpp" />
+    <ClCompile Include="src\GameElements\Board\Board.cpp" />
+    <ClCompile Include="src\Game\SpaceshipGame.cpp" />
+    <ClCompile Include="src\GameElements\Player\Player.cpp" />
+    <ClCompile Include="src\Game\GameSettings.cpp" />
+    <ClCompile Include="src\GameElements\Score\Score.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\SpaceshipGame.h" />
-    <ClInclude Include="src\Player\Player.h" />
-    <ClInclude Include="src\GameSettings.h" />
-    <ClInclude Include="src\Score\Score.h" />
+    <ClInclude Include="src\GameElements\Player\Bullet.h" />
+    <ClInclude Include="src\Game\SpaceshipMenu.h" />
+    <ClInclude Include="src\GameElements\Board\Board.h" />
+    <ClInclude Include="src\Game\SpaceshipGame.h" />
+    <ClInclude Include="src\GameElements\Player\Player.h" />
+    <ClInclude Include="src\Game\GameSettings.h" />
+    <ClInclude Include="src\GameElements\Score\Score.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

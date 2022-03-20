@@ -7,7 +7,7 @@
 
 namespace Lamter
 {
-	Engine::Engine(IMenu* _menu, Game* _game, int targetFPS, COORD consoleBufferSize, bool showCursor) : gameTime(new Time(targetFPS))
+	Engine::Engine(Menu* _menu, Game* _game, int targetFPS, COORD consoleBufferSize, bool showCursor) : gameTime(new Time(targetFPS))
 	{
 		ConsoleController::Init(consoleBufferSize, showCursor);
 		InputManager::Init();
@@ -20,6 +20,8 @@ namespace Lamter
 
 	void Engine::Run()
 	{
+		game->Init();
+
 		while(!menu->ExitGame())
 		{
 			while (!game->ExitLoop())
@@ -36,6 +38,7 @@ namespace Lamter
 
 				if (shouldDraw)
 				{
+					game->CollisionCheck();
 					game->DrawnUpdate();
 					if (game->ExitLoop())
 						break;

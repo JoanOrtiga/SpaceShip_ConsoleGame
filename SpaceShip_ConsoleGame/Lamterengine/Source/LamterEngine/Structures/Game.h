@@ -9,23 +9,30 @@ namespace Lamter
 	{
 	public:
 		bool exitGame = false;
-		std::vector<Lamter::GameObject>* gameObjects;
+		std::vector<GameObject*>* gameObjects;
+
+	private:
+		static bool DrawOrder(GameObject* object1, GameObject* object2);
 
 	public:
-		virtual ~Game() = default;
+		Game();
+		virtual ~Game();
 		
 		virtual void Init();
-		void AddGameObject(GameObject* _gameObject);
-		virtual void NewGame();
+		virtual void NewGame() = 0;
+		virtual void AddGameObject(GameObject* _gameObject);
 		virtual void DestroyGameObject(GameObject* gameObject);
+
+		virtual void CollisionCheck();
+		virtual void Update(double dt);
+		virtual void DrawnUpdate();
+		virtual void Draw();
+
 		/**
 		 * \brief controls game loop
 		 * \return true if game is finished, false  otherwise
 		 */
 		virtual bool ExitLoop();
-		virtual void Update(double dt);
-		virtual void DrawnUpdate();
-		virtual void Draw();
 	};
 }
 

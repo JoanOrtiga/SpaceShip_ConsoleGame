@@ -16,5 +16,7 @@ public:
 	void DrawnUpdate() override;
 	void Draw() override;
 	void DestroyGameObject(Lamter::GameObject* gameObject) override;
+	void AddGameObject(Lamter::GameObject* _gameObject) override;
+	void CollisionCheck() override;
 };
 

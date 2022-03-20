@@ -30,26 +30,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -149,7 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Source\LamterEngine\Structures\Game.fwd.h" />
-    <ClInclude Include="Source\LamterEngine\Structures\IMenu.h" />
+    <ClInclude Include="Source\LamterEngine\Structures\Menu.h" />
     <ClInclude Include="Source\LamterEngine\Classes\COORD.h" />
     <ClInclude Include="Source\LamterEngine\Console\Color.h" />
     <ClInclude Include="Source\LamterEngine\Console\ConsoleController.h" />
@@ -174,6 +174,7 @@
     <ClCompile Include="Source\LamterEngine\Engine\Time.cpp" />
     <ClCompile Include="Source\LamterEngine\Input\InputManager.cpp" />
     <ClCompile Include="Source\LamterEngine\Structures\Game.cpp" />
+    <ClCompile Include="Source\LamterEngine\Structures\GameObject.cpp" />
     <ClCompile Include="Source\LamterEngine\Timers\Timer.cpp" />
     <ClCompile Include="Source\LamterEngine\XMLParser\XMLParser.cpp" />
     <ClCompile Include="Source\ThirdParty\tinyxml2.cpp" />

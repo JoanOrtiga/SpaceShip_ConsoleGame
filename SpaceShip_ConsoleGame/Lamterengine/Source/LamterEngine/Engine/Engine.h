@@ -3,7 +3,7 @@
 #include "Time.h"
 #include "../Structures/Game.h"
 #include "../Classes/COORD.h"
-#include "../Structures/IMenu.h"
+#include "../Structures/Menu.h"
 
 namespace Lamter
 {
@@ -12,11 +12,11 @@ namespace Lamter
 	private:
 		Time* gameTime;
 		Game* game;
-		IMenu* menu;
+		Menu* menu;
 		bool exitGame = false;
 
 	public:
-		Engine(IMenu* _menu, Game* _game, int targetFPS, COORD consoleBufferSize, bool showCursor);
+		Engine(Menu* _menu, Game* _game, int targetFPS, COORD consoleBufferSize, bool showCursor);
 		~Engine();
 		void Run();
 	};

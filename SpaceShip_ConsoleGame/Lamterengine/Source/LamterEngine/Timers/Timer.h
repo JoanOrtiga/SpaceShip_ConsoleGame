@@ -9,15 +9,17 @@ namespace Lamter
 		float maxTime;
 		bool active;
 		bool ready;
+		bool updateOnDraw;
 
 	public:
-		Timer(float _maxTime, bool updateOnDraw, bool activateOnStart, float startTime);
+		Timer(float _maxTime, bool initReady, bool _updateOnDraw, bool activateOnStart, float startTime);
 
-		float GetCurrentTime();
+		float GetActualTime();
 		float GetMaxTime();
 		void ChangeMaxTime(float _maxTime);
 		void Tick(float dt);
 		bool IsReady();
+		void Consume();
 		void Stop();
 		void Activate();
 	};

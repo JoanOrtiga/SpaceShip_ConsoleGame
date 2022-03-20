@@ -156,6 +156,16 @@ namespace Lamter
         DrawAt(text, { x, y });
     }
 
+    void ConsoleController::DeleteAt(int x, int y)
+    {
+        DrawAt(' ', x, y);
+    }
+
+    void ConsoleController::DeleteAt(COORD position)
+    {
+        DrawAt(' ', position);
+    }
+
     void ConsoleController::Fill(char character, int fillAmount)
     {
         std::cout << std::setfill(character) << std::setw(fillAmount - 1) << character;

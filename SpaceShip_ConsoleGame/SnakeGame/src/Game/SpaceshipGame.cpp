@@ -1,6 +1,13 @@
 #include "SpaceshipGame.h"
 
-SpaceshipGame::SpaceshipGame() = default;
+#include "../GameElements/Board/Board.h"
+#include "../GameElements/Player/Player.h"
+
+SpaceshipGame::SpaceshipGame() : Game()
+{
+	auto board = new Board(this);
+	auto player = new Player(this);
+}
 
 SpaceshipGame::~SpaceshipGame() = default;
 
@@ -33,7 +40,18 @@ void SpaceshipGame::Draw()
 	Game::Draw();
 }
 
+void SpaceshipGame::AddGameObject(Lamter::GameObject* _gameObject)
+{
+	Game::AddGameObject(_gameObject);
+}
+
 void SpaceshipGame::DestroyGameObject(Lamter::GameObject* gameObject)
 {
 	Game::DestroyGameObject(gameObject);
 }
+
+void SpaceshipGame::CollisionCheck()
+{
+	Game::CollisionCheck();
+}
+

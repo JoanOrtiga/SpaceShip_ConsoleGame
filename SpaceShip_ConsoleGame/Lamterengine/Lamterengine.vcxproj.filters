@@ -51,7 +51,7 @@
     <ClInclude Include="Source\LamterEngine\Structures\Collider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\LamterEngine\Structures\IMenu.h">
+    <ClInclude Include="Source\LamterEngine\Structures\Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\LamterEngine\Structures\Object.h">
@@ -99,6 +99,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\LamterEngine\Structures\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LamterEngine\Structures\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
