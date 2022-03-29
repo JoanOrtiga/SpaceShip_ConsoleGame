@@ -2,11 +2,21 @@
 
 #include "../GameElements/Board/Board.h"
 #include "../GameElements/Player/Player.h"
+#include "../GameElements/Enemies/ZigZag/ZigZagEnemy.h"
+#include "../GameElements/Enemies/DashForwardEnemy/DashForwardEnemy.h"
+#include "LamterEngine/Structures/GameExtensions.h"
+#include "../GameElements/Score/Score.h"
+#include "../GameElements/RoundManager/RoundManager.h"
+#include "../GameElements/RoundManager/EnemySpawner.h"
 
 SpaceshipGame::SpaceshipGame() : Game()
 {
-	auto board = new Board(this);
-	auto player = new Player(this);
+	new Board(this);
+	new Player(this);
+	new Score(this);
+	new RoundManager(this);
+
+	EnemySpawner::game = this;
 }
 
 SpaceshipGame::~SpaceshipGame() = default;
@@ -18,6 +28,7 @@ void SpaceshipGame::Init()
 
 void SpaceshipGame::NewGame()
 {
+	Game::NewGame();
 }
 
 bool SpaceshipGame::ExitLoop()
@@ -53,5 +64,11 @@ void SpaceshipGame::DestroyGameObject(Lamter::GameObject* gameObject)
 void SpaceshipGame::CollisionCheck()
 {
 	Game::CollisionCheck();
+}
+
+void SpaceshipGame::EndGame()
+{
+	SaveGameObject(Lamter::GameExtensions::GetGameObjectOfTypeByTag(this, "Score"), "Score.txt");
+	exitGame = true;
 }
 

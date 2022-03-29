@@ -1,0 +1,5 @@
+<Root>
+    <Score>
+        <highScore>10</highScore>
+    </Score>
+</Root>

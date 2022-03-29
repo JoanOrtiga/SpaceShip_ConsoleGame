@@ -18,5 +18,6 @@ public:
 	void DestroyGameObject(Lamter::GameObject* gameObject) override;
 	void AddGameObject(Lamter::GameObject* _gameObject) override;
 	void CollisionCheck() override;
+	void EndGame() override;
 };
 

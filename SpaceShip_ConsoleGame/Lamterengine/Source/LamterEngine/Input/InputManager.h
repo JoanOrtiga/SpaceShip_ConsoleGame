@@ -7,10 +7,11 @@ namespace Lamter
 {
 	class InputManager
 	{
-		static std::map<KeyCode, bool> lastKeysState;
+		static std::map<KeyCode, bool>* lastKeysState;
 
 	public:
 		static void Init();
+		static void Delete();
 		static void UpdateInput();
 		static bool IsKeyPressed(KeyCode keyCode);
 		static bool IsKeyPressed(char s);

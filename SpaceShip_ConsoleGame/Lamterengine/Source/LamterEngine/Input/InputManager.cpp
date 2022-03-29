@@ -2,19 +2,25 @@
 
 namespace Lamter
 {
-	std::map<KeyCode, bool> InputManager::lastKeysState;
+	std::map<KeyCode, bool>* InputManager::lastKeysState;
 
 	void InputManager::Init()
 	{
+		lastKeysState = new std::map<KeyCode, bool>();
 		for (KeyCode e = KeyCode::BackSpace; e != KeyCode::INTERNAL; ++e) {
-			lastKeysState.insert_or_assign(e, false);
+			lastKeysState->insert({ e, false });
 		}
+	}
+
+	void InputManager::Delete()
+	{
+		delete lastKeysState;
 	}
 
 	void InputManager::UpdateInput()
 	{
 		for (KeyCode e = KeyCode::BackSpace; e != KeyCode::INTERNAL; ++e) {
-			lastKeysState[e] = IsKeyPressed(e);
+			(*lastKeysState)[e] = IsKeyPressed(e);
 		}
 	}
 
@@ -30,11 +36,11 @@ namespace Lamter
 
 	bool InputManager::IsKeyDown(KeyCode keyCode)
 	{
-		return IsKeyPressed(keyCode) && !lastKeysState[keyCode];
+		return IsKeyPressed(keyCode) && !(*lastKeysState)[keyCode];
 	}
 
 	bool InputManager::IsKeyUp(KeyCode keyCode)
 	{
-		return !IsKeyPressed(keyCode) && lastKeysState[keyCode];
+		return !IsKeyPressed(keyCode) && (*lastKeysState)[keyCode];
 	}
 }

@@ -8,4 +8,18 @@ namespace Lamter
 	{
 		game->AddGameObject(this);
 	}
+
+	template<class T>
+	T* GameObject::GetComponent(GameObject* gameObject)
+	{
+		return dynamic_cast<T*>(gameObject);
+	}
+
+	void GameObject::SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
+	{
+	}
+
+	void GameObject::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
+	{
+	}
 }

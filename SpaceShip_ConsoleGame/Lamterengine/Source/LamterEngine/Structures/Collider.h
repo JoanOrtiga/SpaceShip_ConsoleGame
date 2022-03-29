@@ -11,12 +11,29 @@ namespace Lamter
 		
 	public:
 		virtual ~Collider() = default;
-		virtual void IsColliding(GameObject& me, GameObject& other)
+		virtual bool IsColliding(GameObject& me, GameObject& other, Collider* otherCollider)
 		{
 			if(me.position == other.position)
+			{
+				//Send collision for myself
 				OnCollision(other);
+
+				//Send collision for other
+				RaiseOnCollisionEvent(otherCollider, me);
+
+				return true;
+			}
+
+			return false;
+				
 		}
 		virtual void OnCollision(GameObject& other) = 0;
+
+		static void RaiseOnCollisionEvent(Collider* otherCollider, GameObject& reference)
+		{
+			otherCollider->OnCollision(reference);
+		}
+		
 
 		template <class T>
 		static bool TryGetCollider(T* src, Collider*& collider)

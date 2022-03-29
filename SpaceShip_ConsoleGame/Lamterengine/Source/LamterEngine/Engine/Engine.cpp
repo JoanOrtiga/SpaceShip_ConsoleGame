@@ -28,6 +28,9 @@ namespace Lamter
 			{
 				InputManager::UpdateInput();
 
+				game->AddObjectsFromQueue();
+				game->DestroyObjectsFromQueue();
+
 				bool normalUpdate;
 				const bool shouldDraw = gameTime->ShouldDrawNextFrame(normalUpdate);
 
@@ -38,8 +41,8 @@ namespace Lamter
 
 				if (shouldDraw)
 				{
-					game->CollisionCheck();
 					game->DrawnUpdate();
+					game->CollisionCheck();
 					if (game->ExitLoop())
 						break;
 					game->Draw();
@@ -52,13 +55,19 @@ namespace Lamter
 				}
 			}
 
-			menu->Update();
-			menu->Draw();
+			menu->InitialDraw();
+
+			while (!menu->ExitGame())
+			{
+				menu->Update();
+				menu->Draw();
+			}
 		}
 	}
 
 	Engine::~Engine()
 	{
+		InputManager::Delete();
 		delete game;
 		delete gameTime;
 	}

@@ -15,6 +15,7 @@ namespace Lamter
 
 		static int GetRandomNumberInRange(int min, int max);
 		static char GetRandomLetter();
+		static bool GetRandomBool();
 		static void SetSeed(int seed);
 		static void Init();
 		static int GetRandomNumber();

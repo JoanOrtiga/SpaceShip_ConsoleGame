@@ -1,8 +1,9 @@
 #pragma once
-#include <string>
 
 class GameSettings
 {
-	static constexpr char scoreFileDir[] = "Data/Score";
+	static constexpr char saveFileDir[] = "Data/Score";
+	static constexpr char readSaveFileDir[] = "Data/Score";
+	static constexpr char enemyWavesDir[] = "Data/enemies";
 };
 

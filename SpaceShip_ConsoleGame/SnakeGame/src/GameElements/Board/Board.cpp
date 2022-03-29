@@ -4,6 +4,10 @@
 
 Board::Board(Lamter::Game* _game): GameObject(_game)
 {
+	tag = "Board";
+	position.x = -1;
+	position.y = -1;
+	orderInLayer = 10;
 }
 
 Board::~Board()
@@ -24,6 +28,7 @@ void Board::NewGame()
 
 void Board::Update(double dt)
 {
+
 }
 
 void Board::DrawnUpdate()
@@ -47,7 +52,6 @@ void Board::UpdateHighScore(int score)
 
 void Board::DrawBoard()
 {
-	Lamter::ConsoleController::DrawAt("5", 30, 20);
 	Lamter::ConsoleController::DrawAt(cornerTopLeft, 0, 0);
 	Lamter::ConsoleController::Fill(flatHorizontal, Lamter::ConsoleController::GetConsoleBufferSize().x - 1);
 	Lamter::ConsoleController::Draw(cornerTopRight);
@@ -74,4 +78,23 @@ void Board::DrawBoard()
 
 	Lamter::ConsoleController::DrawAt(scoreText, scorePosition);
 	Lamter::ConsoleController::DrawAt(highscoreText, highscorePosition);
+}
+
+void Board::OnCollision(GameObject& other)
+{
+}
+
+bool Board::IsColliding(GameObject& me, GameObject& other, Collider* otherCollider)
+{
+	bool x = other.position.x < 1 || other.position.x >= Lamter::ConsoleController::GetConsoleBufferSize().x-1;
+	bool y = other.position.y <= 1 + scoreSize || other.position.y >= Lamter::ConsoleController::GetConsoleBufferSize().y - 1;
+
+	if (x || y)
+	{
+		OnCollision(other);
+		Collider::RaiseOnCollisionEvent(otherCollider, me);
+		return true;
+	}
+
+	return false;
 }

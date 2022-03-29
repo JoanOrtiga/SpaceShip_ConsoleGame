@@ -34,11 +34,7 @@ namespace Lamter
 		{
 			if (ready)
 			{
-				time = maxTime;
-				if (updateOnDraw)
-				{
-					ready = false;
-				}
+				ready = false;
 				return true;
 			}
 			return false;
@@ -55,6 +51,11 @@ namespace Lamter
 	float Timer::GetActualTime()
 	{
 		return time;
+	}
+
+	float Timer::GetCountUpTime()
+	{
+		return maxTime - time;
 	}
 
 	float Timer::GetMaxTime()
@@ -75,5 +76,11 @@ namespace Lamter
 	void Timer::Activate()
 	{
 		active = true;
+	}
+
+	void Timer::Reset()
+	{
+		time = maxTime;
+		ready = false;
 	}
 }

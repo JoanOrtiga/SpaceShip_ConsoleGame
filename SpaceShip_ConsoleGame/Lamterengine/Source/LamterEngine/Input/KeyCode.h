@@ -5,14 +5,14 @@
 
 namespace Lamter
 {
-	enum class KeyCode
+	enum class KeyCode : uint8_t
 	{
 		None = 0,
 		BackSpace = 8,
 		Tab = 9,
 		Return = 13,
 		Escape = 27,
-
+		SpaceBar = 32,
 		UpArrow = WM_KEYUP,
 		DownArrow = WM_KEYDOWN,
 

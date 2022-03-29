@@ -1,9 +1,13 @@
 ﻿#pragma once
 
+#include "LamterEngine/Structures/Collider.h"
 #include "LamterEngine/Structures/GameObject.h"
 
-class Board : public Lamter::GameObject
+class Board : public Lamter::GameObject , public Lamter::Collider
 {
+public:
+	static constexpr char BOARD_TAG[] = "Board";
+
 private:
 	const char cornerTopLeft = 201;		//╔
 	const char cornerTopRight = 187;	//╗
@@ -24,6 +28,7 @@ private:
 	Lamter::COORD highscorePosition;
 
 	
+	
 public:
 	Board(Lamter::Game* _game);
 
@@ -36,5 +41,7 @@ public:
 	void UpdateScore(int score);
 	void UpdateHighScore(int score);
 	void DrawBoard();
+	void OnCollision(GameObject& other) override;
+	bool IsColliding(GameObject& me, GameObject& other, Collider* otherCollider) override;
 };
 

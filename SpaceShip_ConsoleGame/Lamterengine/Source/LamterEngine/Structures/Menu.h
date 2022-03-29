@@ -7,7 +7,7 @@ namespace Lamter
 	class Menu
 	{
 	protected:
-		bool exitMenu;
+		bool exitMenu = false;
 		Game* game;
 	public:
 		Menu(Game* _game) : exitMenu(false), game(_game)
@@ -20,6 +20,7 @@ namespace Lamter
 		}
 		virtual void Update() = 0;
 		virtual void Draw() = 0;
+		virtual void InitialDraw() = 0;
 	};
 }
 

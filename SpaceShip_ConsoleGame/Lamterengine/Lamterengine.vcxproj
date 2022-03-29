@@ -148,7 +148,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\LamterEngine\XMLParser\ILoadable.h" />
     <ClInclude Include="Source\LamterEngine\Structures\Game.fwd.h" />
+    <ClInclude Include="Source\LamterEngine\Structures\GameExtensions.h" />
     <ClInclude Include="Source\LamterEngine\Structures\Menu.h" />
     <ClInclude Include="Source\LamterEngine\Classes\COORD.h" />
     <ClInclude Include="Source\LamterEngine\Console\Color.h" />
@@ -163,7 +165,8 @@
     <ClInclude Include="Source\LamterEngine\Structures\GameObject.h" />
     <ClInclude Include="Source\LamterEngine\Structures\Object.h" />
     <ClInclude Include="Source\LamterEngine\Timers\Timer.h" />
-    <ClInclude Include="Source\LamterEngine\XMLParser\XMLParser.h" />
+    <ClInclude Include="Source\LamterEngine\XMLParser\ISavable.h" />
+    <ClInclude Include="Source\LamterEngine\XMLParser\XMLManager.h" />
     <ClInclude Include="Source\ThirdParty\tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
@@ -173,10 +176,10 @@
     <ClCompile Include="Source\LamterEngine\Engine\Random.cpp" />
     <ClCompile Include="Source\LamterEngine\Engine\Time.cpp" />
     <ClCompile Include="Source\LamterEngine\Input\InputManager.cpp" />
+    <ClCompile Include="Source\LamterEngine\PreProcessor.h" />
     <ClCompile Include="Source\LamterEngine\Structures\Game.cpp" />
     <ClCompile Include="Source\LamterEngine\Structures\GameObject.cpp" />
     <ClCompile Include="Source\LamterEngine\Timers\Timer.cpp" />
-    <ClCompile Include="Source\LamterEngine\XMLParser\XMLParser.cpp" />
     <ClCompile Include="Source\ThirdParty\tinyxml2.cpp" />
     <ClCompile Include="Source\ThirdParty\xmltest.cpp" />
   </ItemGroup>

@@ -15,6 +15,7 @@ namespace Lamter
 		Timer(float _maxTime, bool initReady, bool _updateOnDraw, bool activateOnStart, float startTime);
 
 		float GetActualTime();
+		float GetCountUpTime();
 		float GetMaxTime();
 		void ChangeMaxTime(float _maxTime);
 		void Tick(float dt);
@@ -22,6 +23,7 @@ namespace Lamter
 		void Consume();
 		void Stop();
 		void Activate();
+		void Reset();
 	};
 }
 

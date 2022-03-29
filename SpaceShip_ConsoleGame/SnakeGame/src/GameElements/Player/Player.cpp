@@ -1,20 +1,26 @@
 #include "Player.h"
 
+#include <sstream>
+
+#include "Bullet.h"
 #include "LamterEngine/Console/ConsoleController.h"
 #include "LamterEngine/Input/InputManager.h"
+#include "LamterEngine/Structures/Game.h"
 
 Player::Player(Lamter::Game* _game) : GameObject(_game)
 {
+	tag = "Player";
 }
 
 Player::~Player()
 {
-	delete timer;
+	delete movingTimer;
 }
 
 void Player::Awake()
 {
-	timer = new Lamter::Timer(movementSpeed, true, false, true, movementSpeed);
+	shootingTimer = new Lamter::Timer(timeBetweenShots, true, true, true, timeBetweenShots);
+	movingTimer = new Lamter::Timer(movementSpeed, true, false, true, movementSpeed);
 	position = { 3, Lamter::ConsoleController::GetConsoleBufferSize().y / 2 + 3 };
 	Draw();
 	lastPosition = position;
@@ -52,13 +58,25 @@ void Player::Update(double dt)
 		moveDirection.x = 0;
 	}
 
-	timer->Tick(dt);
+	if (Lamter::InputManager::IsKeyPressed(Lamter::KeyCode::SpaceBar))
+		wantsToShoot = true;
+	else 
+		wantsToShoot = false;
+
+	shootingTimer->Tick(dt);
+	movingTimer->Tick(dt);
 }
 
 void Player::DrawnUpdate()
 {
-	if (!timer->IsReady())
+	if (wantsToShoot && shootingTimer->IsReady())
+	{
+		auto bullet = new Bullet(game, { short(position.x + 1), position.y });
+	}
+
+	if (!movingTimer->IsReady())
 		return;
+
 	lastPosition = position;
 	position += moveDirection;
 	moveDirection = { 0,0 };
@@ -66,12 +84,24 @@ void Player::DrawnUpdate()
 
 void Player::Draw()
 {
-	if (!timer->IsReady())
+	if (!movingTimer->IsReady())
 		return;
 	if (lastPosition == position)
 		return;
 
 	Lamter::ConsoleController::DrawAt(shape, position);
 	Lamter::ConsoleController::DeleteAt(lastPosition);
-	timer->Consume();
+	movingTimer->Consume();
+}
+
+void Player::OnCollision(GameObject& other)
+{
+	if(other.tag == "Board")
+	{
+		position = lastPosition;
+	}
+	else if(other.tag == "Enemy")
+	{
+		game->EndGame();
+	}
 }

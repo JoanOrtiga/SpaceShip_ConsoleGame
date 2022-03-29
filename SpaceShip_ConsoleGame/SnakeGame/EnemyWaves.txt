@@ -1,0 +1,13 @@
+<root>
+	<enemyWaves>
+		<round roundTime = "20">
+			<enemies startSpawningTime = "2">
+				<enemy enemyType="1" spawnPositionY="15" spawnDelay="3" quantity = "5"/>
+			</enemies>
+		</round>
+	</enemyWaves>
+</root>
+
+
+<!---Make sure that round time is higher than max time of enemies spawn. 
+You may get fewer enemies if you make otherwise.---->

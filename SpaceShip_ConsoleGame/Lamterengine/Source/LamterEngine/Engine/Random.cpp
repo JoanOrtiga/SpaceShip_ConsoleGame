@@ -39,6 +39,11 @@ namespace Lamter
 		return abecedary[rand() % ALPHABET_LENGTH];
 	}
 
+	bool Random::GetRandomBool()
+	{
+		return GetRandomNumberInRange(1, 10) > 5;
+	}
+
 	void Random::SetSeed(int seed)
 	{
 		srand(seed);
