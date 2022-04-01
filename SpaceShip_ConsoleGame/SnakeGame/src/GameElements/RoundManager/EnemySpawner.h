@@ -12,6 +12,9 @@ public:
 	{
 		switch (_enemyType)
 		{
+		default:
+			new ZigZagEnemy(_spawnPositionY, game);
+			break;
 		case 0:
 			new ZigZagEnemy(_spawnPositionY, game);
 			break;

@@ -57,11 +57,13 @@ namespace Lamter
 
 			menu->InitialDraw();
 
-			while (!menu->ExitGame())
+			while (!menu->ExitMenu())
 			{
 				menu->Update();
 				menu->Draw();
 			}
+
+			menu->ResetMenu();
 		}
 	}
 

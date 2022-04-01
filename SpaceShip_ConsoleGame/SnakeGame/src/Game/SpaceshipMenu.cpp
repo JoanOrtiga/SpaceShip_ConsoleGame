@@ -15,11 +15,11 @@ void SpaceshipMenu::Update()
 {
 	if(Lamter::InputManager::IsKeyDown(Lamter::KeyCode::Escape))
 	{
-		exitMenu = true;
+		Menu::Quit();
 	}
 	else if(Lamter::InputManager::IsKeyDown(Lamter::KeyCode::C))
 	{
-		game->NewGame();
+		Menu::NewGame();
 	}
 }
 
@@ -32,7 +32,10 @@ void SpaceshipMenu::InitialDraw()
 {
 	Lamter::ConsoleController::CLS();
 
-	Lamter::ConsoleController::DrawAt("Game Lost", Lamter::ConsoleController::GetConsoleBufferSize().y / 2, Lamter::ConsoleController::GetConsoleBufferSize().x / 2 - 4);
+	Lamter::ConsoleController::SetConsoleColor(Lamter::Color::RED);
+	Lamter::ConsoleController::DrawAt("Game Lost", Lamter::ConsoleController::GetConsoleBufferSize().x / 2 - 4, Lamter::ConsoleController::GetConsoleBufferSize().y / 2-2);
+	Lamter::ConsoleController::SetConsoleColor(Lamter::Color::WHITE);
+
 	std::string exitMessage = "Press button 'C' to continue, or ESC, to close";
-	Lamter::ConsoleController::DrawAt(exitMessage, Lamter::ConsoleController::GetConsoleBufferSize().y / 2 + 2, Lamter::ConsoleController::GetConsoleBufferSize().x / 2 - exitMessage.length() / 2);
+	Lamter::ConsoleController::DrawAt(exitMessage, Lamter::ConsoleController::GetConsoleBufferSize().x / 2 - exitMessage.length() / 2, Lamter::ConsoleController::GetConsoleBufferSize().y / 2);
 }

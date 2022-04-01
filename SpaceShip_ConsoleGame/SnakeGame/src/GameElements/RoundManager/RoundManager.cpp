@@ -61,7 +61,7 @@ void RoundManager::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* r
 	/*
 	 * Example:
 		<enemyWaves>
-			<round roundTime = 10>
+			<round roundTime = "10">
 				<enemies startSpawningTime = 0>
 					<enemy: enemyType=0, spawnPositionY=5, spawnDelay=0, quantity = 1>
 				<enemies/>
@@ -70,9 +70,10 @@ void RoundManager::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* r
 	 *
 	*/
 
+
 	//<enemyWaves>
 	auto enemyWavesNode = rootNode->FirstChildElement("enemyWaves");
-	for (tinyxml2::XMLElement* roundElement = enemyWavesNode->FirstChildElement(); roundElement != nullptr; roundElement = enemyWavesNode->NextSiblingElement())
+	for (tinyxml2::XMLElement* roundElement = enemyWavesNode->FirstChildElement(); roundElement; roundElement = roundElement->NextSiblingElement())
 	{
 		//<round roundTime = 10>
 		float roundTime = 0;
@@ -80,14 +81,14 @@ void RoundManager::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* r
 		Round* newRound = new Round(roundTime);
 		rounds->push_back(newRound);
 
-		for (tinyxml2::XMLElement* enemyGroupElement = roundElement->FirstChildElement(); enemyGroupElement != nullptr; enemyGroupElement = roundElement->NextSiblingElement())
+		for (tinyxml2::XMLElement* enemyGroupElement = roundElement->FirstChildElement(); enemyGroupElement; enemyGroupElement = enemyGroupElement->NextSiblingElement())
 		{
 			//<enemies startSpawningTime = 0>
 			float startSpawningTime = 0;
 			enemyGroupElement->QueryFloatAttribute("startSpawningTime", & startSpawningTime);
 			EnemyGroup* newEnemyGroup = new EnemyGroup(startSpawningTime);
 
-			for (tinyxml2::XMLElement* enemyElement = enemyGroupElement->FirstChildElement(); enemyElement != nullptr; enemyElement = enemyGroupElement->NextSiblingElement())
+			for (tinyxml2::XMLElement* enemyElement = enemyGroupElement->FirstChildElement(); enemyElement; enemyElement = enemyElement->NextSiblingElement())
 			{
 				//<enemy: type=0, yPosition=5, spawnTime=0, quantity = 1>
 				int enemyType = 0;

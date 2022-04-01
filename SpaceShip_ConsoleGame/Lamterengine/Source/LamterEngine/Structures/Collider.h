@@ -25,7 +25,6 @@ namespace Lamter
 			}
 
 			return false;
-				
 		}
 		virtual void OnCollision(GameObject& other) = 0;
 
@@ -38,7 +37,6 @@ namespace Lamter
 		template <class T>
 		static bool TryGetCollider(T* src, Collider*& collider)
 		{
-
 			collider = dynamic_cast<Collider*>(src);
 			return collider != nullptr;
 		}

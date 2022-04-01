@@ -29,6 +29,15 @@ void SpaceshipGame::Init()
 void SpaceshipGame::NewGame()
 {
 	Game::NewGame();
+
+	gameObjects->clear();
+	destroyGameObjectsQueue->clear();
+	addGameObjectsQueue->clear();
+
+	new Board(this);
+	new Player(this);
+	new Score(this);
+	new RoundManager(this);
 }
 
 bool SpaceshipGame::ExitLoop()
@@ -70,5 +79,7 @@ void SpaceshipGame::EndGame()
 {
 	SaveGameObject(Lamter::GameExtensions::GetGameObjectOfTypeByTag(this, "Score"), "Score.txt");
 	exitGame = true;
+
+	
 }
 

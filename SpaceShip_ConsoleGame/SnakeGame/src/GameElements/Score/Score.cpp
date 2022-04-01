@@ -41,7 +41,6 @@ void Score::Awake()
 	board = Lamter::GameExtensions::GetGameObjectOfTypeByTag<Board>(game, "Board");
 	board->UpdateScore(currentScore);
 	board->UpdateHighScore(highScore);
-
 }
 
 void Score::NewGame()

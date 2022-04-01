@@ -46,3 +46,4 @@ bool EnemyGroup::SpawnedAll()
 	}
 	return true;
 }
+

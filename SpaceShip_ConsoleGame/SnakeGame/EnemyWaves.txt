@@ -3,7 +3,12 @@
 		<round roundTime = "20">
 			<enemies startSpawningTime = "2">
 				<enemy enemyType="1" spawnPositionY="15" spawnDelay="3" quantity = "5"/>
+				<enemy enemyType="1" spawnPositionY="30" spawnDelay="3" quantity = "5"/>
 			</enemies>
+			<enemies startSpawningTime = "1.5">
+				<enemy enemyType="0" spawnPositionY="10" spawnDelay="1" quantity = "15"/>
+				<enemy enemyType="0" spawnPositionY="20" spawnDelay="0.5" quantity = "15"/>
+			</enemies>	
 		</round>
 	</enemyWaves>
 </root>

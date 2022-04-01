@@ -138,11 +138,15 @@ namespace Lamter
 
     void ConsoleController::Draw(char character)
     {
+        std::cout.flush();
+        std::cout.clear();
         std::cout << character;
     }
 
     void ConsoleController::Draw(std::string text)
     {
+        std::cout.flush();
+        std::cout.clear();
         std::cout << text;
     }
 

@@ -16,4 +16,3 @@ public:
 	void ResetAll();
 	bool SpawnedAll();
 };
-
