@@ -60,8 +60,8 @@ namespace Lamter
 		virtual void LoadAllGame(std::string fileLocation);
 		virtual void SaveGameObject(GameObject* gameObject, std::string fileLocation);
 		virtual void LoadGameObject(GameObject* gameObject, std::string fileLocation);
-		void LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode) override;
-		void SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode) override;
+		void LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode) override;
+		void SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode) override;
 	};
 }
 

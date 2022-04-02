@@ -2,6 +2,7 @@
 
 #include <string>
 #include <Windows.h>
+#include <wincon.h>
 
 #include "Color.h"
 #include "../Classes/COORD.h"

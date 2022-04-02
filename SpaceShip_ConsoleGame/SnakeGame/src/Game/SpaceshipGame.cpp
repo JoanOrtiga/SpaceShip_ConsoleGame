@@ -79,7 +79,5 @@ void SpaceshipGame::EndGame()
 {
 	SaveGameObject(Lamter::GameExtensions::GetGameObjectOfTypeByTag(this, "Score"), "Score.txt");
 	exitGame = true;
-
-	
 }
 

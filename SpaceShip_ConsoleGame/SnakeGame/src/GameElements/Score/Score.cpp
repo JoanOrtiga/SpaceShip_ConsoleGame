@@ -33,6 +33,7 @@ void Score::AddScore(int score)
 {
 	currentScore += score;
 	board->UpdateScore(currentScore);
+	SetHighScore();
 }
 
 void Score::Awake()
@@ -60,7 +61,7 @@ void Score::Draw()
 }
 
 
-void Score::SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
+void Score::SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode)
 {
 	tinyxml2::XMLElement* scoreElement = doc->NewElement("Score");
 	//scoreElement->SetAttribute(GET_VARIABLE_NAME(highScore), highScore);
@@ -70,7 +71,7 @@ void Score::SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
 	rootNode->InsertEndChild(scoreElement);
 }
 
-void Score::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
+void Score::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode)
 {
 	tinyxml2::XMLElement* scoreElement = rootNode->FirstChildElement("Score");
 	tinyxml2::XMLElement* highScoreElement = scoreElement->FirstChildElement(GET_VARIABLE_NAME(highScore));

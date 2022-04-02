@@ -52,7 +52,6 @@ void EnemyShip::Draw()
 		return;
 	if (lastPosition == position)
 		return;
-
 	Lamter::ConsoleController::DrawAt(shape, position);
 	Lamter::ConsoleController::DeleteAt(lastPosition);
 	movingTimer->Consume();

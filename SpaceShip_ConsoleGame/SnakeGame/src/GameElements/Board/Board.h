@@ -27,7 +27,7 @@ private:
 	const Lamter::COORD scorePosition = { (short)5, scoreSize };
 	Lamter::COORD highscorePosition;
 
-	
+	bool screenBug = false;
 	
 public:
 	Board(Lamter::Game* _game);

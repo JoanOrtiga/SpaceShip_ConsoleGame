@@ -34,8 +34,8 @@ namespace Lamter
 		virtual void DrawnUpdate() = 0;
 		virtual void Draw() = 0;
 
-		void SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode) override;
-		void LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode) override;
+		void SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode) override;
+		void LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode) override;
 	};
 }
 

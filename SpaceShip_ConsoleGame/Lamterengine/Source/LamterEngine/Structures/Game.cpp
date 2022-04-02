@@ -212,7 +212,7 @@ namespace Lamter
 		XMLManager::LoadGameObject(gameObject, fileLocation);
 	}
 
-	void Game::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
+	void Game::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode)
 	{
 		for (auto gameObject : *gameObjects)
 		{
@@ -220,7 +220,7 @@ namespace Lamter
 		}
 	}
 
-	void Game::SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
+	void Game::SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode)
 	{
 		for (auto gameObject : *gameObjects)
 		{

@@ -48,7 +48,7 @@ void Bullet::Draw()
 
 void Bullet::OnCollision(GameObject& other)
 {
-	if(other.tag == "Board")
+	if(other.tag == "Board" || other.tag == "Enemy")
 	{
 		Lamter::ConsoleController::DeleteAt(position - moveDirection);
 		game->DestroyGameObject(this);

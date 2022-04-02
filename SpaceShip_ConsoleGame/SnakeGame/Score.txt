@@ -1,5 +1,5 @@
 <Root>
     <Score>
-        <highScore>10</highScore>
+        <highScore>0</highScore>
     </Score>
 </Root>

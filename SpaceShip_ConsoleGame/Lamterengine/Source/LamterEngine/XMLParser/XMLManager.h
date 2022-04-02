@@ -14,7 +14,7 @@ namespace Lamter
 		static void SaveGame(Lamter::Game* game, std::string fileLocation)
 		{
 			tinyxml2::XMLDocument* doc = new tinyxml2::XMLDocument();
-			tinyxml2::XMLNode* rootNode = doc->NewElement("Root");
+			tinyxml2::XMLElement* rootNode = doc->NewElement("Root");
 			doc->InsertFirstChild(rootNode);
 			game->SaveToFile(doc, rootNode);
 			doc->SaveFile(fileLocation.c_str());
@@ -23,7 +23,7 @@ namespace Lamter
 		static void LoadGame(Lamter::Game* game, std::string fileLocation)
 		{
 			tinyxml2::XMLDocument* doc = new tinyxml2::XMLDocument();
-			tinyxml2::XMLNode* rootNode = doc->FirstChild();
+			tinyxml2::XMLElement* rootNode = doc->FirstChildElement();
 			doc->InsertFirstChild(rootNode);
 			game->LoadFromFile(doc, rootNode);
 			doc->SaveFile(fileLocation.c_str());
@@ -33,7 +33,7 @@ namespace Lamter
 		{
 			tinyxml2::XMLDocument* doc = new tinyxml2::XMLDocument();
 
-			tinyxml2::XMLNode* rootNode = doc->FirstChild();
+			tinyxml2::XMLElement* rootNode = doc->FirstChildElement();
 			if(rootNode == nullptr)
 			{
 				rootNode = doc->NewElement("Root");
@@ -51,7 +51,7 @@ namespace Lamter
 			if(!doc->LoadFile(fileLocation.c_str()) == tinyxml2::XML_SUCCESS)
 				return;
 
-			tinyxml2::XMLNode* rootNode = doc->FirstChild();
+			tinyxml2::XMLElement* rootNode = doc->FirstChildElement();
 			if (rootNode == nullptr)
 				return;
 			gameObject->LoadFromFile(doc, rootNode);

@@ -74,7 +74,11 @@ void Board::DrawBoard()
 
 	Lamter::ConsoleController::Draw(cornerBottomLeft);
 	Lamter::ConsoleController::Fill(flatHorizontal, Lamter::ConsoleController::GetConsoleBufferSize().x - 1);
-	Lamter::ConsoleController::Draw(cornerBottomRight);
+	if(!screenBug)
+	{
+		Lamter::ConsoleController::Draw(cornerBottomRight); //Being last buffer character makes the buffer to create a new line.
+		screenBug = true;
+	}
 
 	Lamter::ConsoleController::DrawAt(scoreText, scorePosition);
 	Lamter::ConsoleController::DrawAt(highscoreText, highscorePosition);

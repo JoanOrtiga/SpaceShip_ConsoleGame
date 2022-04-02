@@ -6,29 +6,30 @@
 
 namespace Lamter
 {
-    COORD ConsoleController::consolePixelSize;
-    COORD ConsoleController::consoleBufferSize;
+    COORD ConsoleController::consolePixelSize{};
+    COORD ConsoleController::consoleBufferSize{};
 
-    HANDLE ConsoleController::stdHandle;
-    CONSOLE_SCREEN_BUFFER_INFO ConsoleController::csbi;
+    HANDLE ConsoleController::stdHandle{};
+    CONSOLE_SCREEN_BUFFER_INFO ConsoleController::csbi{};
 
     void ConsoleController::Init(COORD _consoleBufferSize, bool showCursor)
     {
         stdHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 
-        _SMALL_RECT Rect;
-        Rect.Top = 0;
-        Rect.Left = 0;
-        Rect.Bottom = _consoleBufferSize.y - 1;
-        Rect.Right = _consoleBufferSize.x - 1;
+        _SMALL_RECT rect{};
+        rect.Top = 0;
+        rect.Left = 0;
+        rect.Bottom = _consoleBufferSize.y - 1;
+        rect.Right = _consoleBufferSize.x - 1;
 
-        SetConsoleWindowInfo(stdHandle, TRUE, &Rect);
-        SetConsoleScreenBufferSize(stdHandle, { _consoleBufferSize.x, _consoleBufferSize.y });
+        SetConsoleWindowInfo(stdHandle, true, &rect);
+        SetConsoleScreenBufferSize(stdHandle, { _consoleBufferSize.x, (short)(_consoleBufferSize.y+1) });
 
-        consoleBufferSize.x = _consoleBufferSize.x;
+    	consoleBufferSize.x = _consoleBufferSize.x;
         consoleBufferSize.y = _consoleBufferSize.y;
 
         SetCursorVisible(showCursor);
+        SetCursorPosition(0, 0);
     }
 
     void ConsoleController::Delete()
@@ -103,8 +104,7 @@ namespace Lamter
 
     void ConsoleController::SetCursorPosition(COORD coord)
     {
-        std::cout.flush();
-        SetConsoleCursorPosition(stdHandle, {coord.x, coord.y});//{coord.Y, coord.X});
+        SetConsoleCursorPosition(stdHandle, {coord.x, coord.y});
     }
 
     void ConsoleController::CLS()
@@ -138,15 +138,11 @@ namespace Lamter
 
     void ConsoleController::Draw(char character)
     {
-        std::cout.flush();
-        std::cout.clear();
         std::cout << character;
     }
 
     void ConsoleController::Draw(std::string text)
     {
-        std::cout.flush();
-        std::cout.clear();
         std::cout << text;
     }
 

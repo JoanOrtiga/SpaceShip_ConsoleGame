@@ -15,11 +15,11 @@ namespace Lamter
 		return dynamic_cast<T*>(gameObject);
 	}
 
-	void GameObject::SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
+	void GameObject::SaveToFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode)
 	{
 	}
 
-	void GameObject::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
+	void GameObject::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode)
 	{
 	}
 }

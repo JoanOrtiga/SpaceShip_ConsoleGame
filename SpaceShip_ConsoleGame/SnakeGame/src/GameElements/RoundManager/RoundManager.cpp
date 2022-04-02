@@ -56,7 +56,7 @@ void RoundManager::Draw()
 
 }
 
-void RoundManager::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLNode* rootNode)
+void RoundManager::LoadFromFile(tinyxml2::XMLDocument* doc, tinyxml2::XMLElement* rootNode)
 {
 	/*
 	 * Example:
