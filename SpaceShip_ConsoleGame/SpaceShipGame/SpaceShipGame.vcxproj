@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{a3972212-12c3-4815-8645-16f0541949b4}</ProjectGuid>
-    <RootNamespace>SnakeGame</RootNamespace>
+    <RootNamespace>SpaceShipGame</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>SpaceShipGame</ProjectName>
   </PropertyGroup>
